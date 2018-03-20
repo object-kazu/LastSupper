@@ -1,0 +1,26 @@
+//
+// Prefix header for all source files of the 'LastSupper' target in the 'LastSupper' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+
+#ifdef DEBUG
+#define LOG(...) NSLog(__VA_ARGS__)
+
+#define LOG_FRAME(p) NSLog(@"%f, %f - %f, %f", p.origin.x, p.origin.y, p.size.width, p.size.height)
+
+#else
+#define LOG(...)
+#define LOG_FRAME(p)
+
+#endif
